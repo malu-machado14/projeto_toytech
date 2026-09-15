@@ -1,2 +1,0 @@
-link do GitHub:
-https://github.com/malu-machado14/projeto_toytech/tree/main
