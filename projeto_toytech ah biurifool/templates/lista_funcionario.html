@@ -1,0 +1,78 @@
+{% extends 'sidebar.html' %}
+{% block conteudo %}
+
+<div class="body-lista">
+
+    <div class="container-fluid p-4">
+
+        <!-- topo -->
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <div>
+                <h1 class="fw-bold">Funcionários</h1>
+                <p class="text-muted" id="lista">
+                    Lista de funcionários cadastrados
+                </p>
+            </div>
+            <a href="{{ url_for('novo_funcionario') }}" class="btn"> <!--vai pra tela de cadastro de produto-->
+                + Novo Funcionário
+            </a>
+        </div>
+
+        <!-- pesquisa -->
+        <div class="card-dash-lista mb-4">
+            <div class="row g-3">
+                <div class="col-md-10">
+                    <input type="text" class="form-control" placeholder="Pesquisar funcionário...">
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-primary w-100">
+                        Buscar
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- tabela -->
+        <div class="card-dash-lista">
+            <table class="table table-hover align-middle">
+                <thead class="table-light">
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>CPF</th>
+                        <th>Email</th>
+                        <th>Senha</th>
+                        <th>Telefone</th>
+                        <th>Cargo</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for funcionario in funcionario %}
+                        <tr>
+                            <td>{{ funcionario.id }}</td>
+                            <td>{{ funcionario.nome }}</td>
+                            <td>{{ funcionario.cpf }}</td>
+                            <td>{{ funcionario.email }}</td>
+                            <td>{{ funcionario.senha }}</td>
+                            <td>{{ funcionario.telefone }}</td>
+                            <td>{{ funcionario.cargo }}</td>
+
+                            <td>
+                                <button class="btn btn-sm btn-warning btn-editar-lista">
+                                    Editar
+                                </button>
+                                <button class="btn btn-sm btn-danger btn-excluir-lista">
+                                    Excluir
+                                </button>
+                            </td>
+                        </tr>
+                    {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

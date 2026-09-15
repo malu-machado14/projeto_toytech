@@ -1,0 +1,51 @@
+{% extends 'sidebar.html' %}
+
+{% block conteudo %}
+<h2>{{ 'Editar Funcionario' if funcionario and funcionario.id else 'Cadastrar Funcionario' }}</h2>
+
+<div class="body-cadastro">
+
+    <div class="container d-flex align-items-center justify-content-center cadastro-container">
+        <div class="cadastro-card text-center mt-4">
+            <h3 class="mb-3 text-white">CADASTRO DE FUNCIONÁRIO</h3>
+
+            <form method="POST" action="{% if funcionario and funcionario.id %}{{ url_for('login','salvar_funcionario','atualizar_funcionario', id=funcionario.id) }}{% else %}{{ url_for('salvar_funcionario') }}{% endif %}">
+                <div class="mb-3 text-start"> <label class="form-label text-white">Nome</label>
+                    <div class="input-group"> <span class="input-group-text "><i class="bi text-white"></i> </span>
+                        <input type="text" id="name" class="form-control-cad" value="{{ funcionario.nome if funcionario else '' }}" required>
+                    </div>
+                </div>
+                <div class="mb-3 text-start"> <label class="form-label text-white">CPF</label>
+                    <div class="input-group"> <span class="input-group-text "><i class="bi text-white"></i> </span>
+                        <input type="text" id="cpf" name="CPF" class="form-control-cad" maxlength="11" value="{{ funcionario.cpf if funcionario else '' }}" required>
+                    </div>
+                </div>
+                <div class="mb-3 text-start"> <label class="form-label text-white">Email</label>
+                    <div class="input-group"> <span class="input-group-text "><i class="bi text-white"></i> </span>
+                        <input type="email" id="email" name="email" class="form-control-cad" value="{{ funcionario.email if funcionario else '' }}" required>
+                    </div>
+                </div>
+                <div class="mb-3 text-start"> <label class="form-label text-white">Senha</label>
+                    <div class="input-group"> <span class="input-group-text "><i class="bi text-white"></i> </span>
+                        <input type="text" id="senha" name="senha" class="form-control-cad" value="{{ funcionario.senha if funcionario else '' }}" required>
+                    </div>
+                </div>
+                <div class="mb-3 text-start"> <label class="form-label text-white">Telefone</label>
+                    <div class="input-group"> <span class="input-group-text "><i class="bi text-white"></i> </span>
+                        <input type="text" id="telefone" name="telefone" class="form-control-cad" maxlength="11" value="{{ funcionario.telefone if funcionario else '' }}" required>
+                    </div>
+                </div>
+                <div class="mb-3 text-start"> <label class="form-label text-white">Cargo</label>
+                    <div class="input-group"> <span class="input-group-text "><i class="bi text-white"></i> </span>
+                        <input type="text" id="cargo" name="cargo" class="form-control-cad" value="{{ funcionario.cargo if funcionario else '' }}" required>
+                    </div>
+                </div>
+                <button class="btn btn-cad w-100 text-white mt-2" type="submit">Cadastrar</button>
+            </form>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

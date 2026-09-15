@@ -1,0 +1,38 @@
+{% extends 'sidebar.html' %}
+{% block conteudo %}
+<h2>{{ 'Editar Solicitador' if solicitador and solicitador.id else 'Cadastrar Solicitador' }}</h2>
+
+<div class="body-cadastro">
+
+    <div class="container d-flex align-items-center justify-content-center cadastro-container">
+        <div class="cadastro-card text-center mt-4">
+            <h3 class="mb-3 text-white">CADASTRO DE SOLICITADOR</h3>
+
+            <form method="POST"  action="{% if solicitador and solicitador.id %}{{ url_for('salvar_solicitador','atualizar_solicitador', id=solicitador.id) }}{% else %}{{ url_for('salvar_solicitador') }}{% endif %}">
+                <div class="mb-3 text-start"> <label class="form-label text-white">Nome</label>
+                    <div class="input-group"> <span class="input-group-text "><i class="bi text-white"></i></span>
+                        <input type="text" id="name" name="nome" class="form-control-cad" required>
+                    </div>
+                </div>
+                <div class="mb-3 text-start"> <label class="form-label text-white">CNPJ</label>
+                    <div class="input-group"> <span class="input-group-text "><i class="bi  text-white"></i> </span>
+                        <input type="text" id="cnpj" name="cnpj" class="form-control-cad" required>
+                    </div>
+                </div>
+                    <div class="mb-3 text-start"> <label class="form-label text-white">Senha</label>
+                        <div class="input-group"> <span class="input-group-text "><i class="bi  text-white"></i> </span>
+                            <input type="text" id="senha" name="senha" class="form-control-cad" required>
+                        </div>
+                    </div>
+                    <div class="mb-3 text-start"> <label class="form-label text-white">Telefone</label>
+                        <div class="input-group"> <span class="input-group-text "><i class="bi  text-white"></i> </span>
+                            <input type="tel" id="tel" name="telefone" class="form-control-cad" required>
+                        </div>
+                    </div>
+                    <button class="btn btn-cad w-100 text-white mt-2" type="submit">Cadastrar</button>
+                </div>
+
+        </div>
+
+</div>
+{% endblock %}

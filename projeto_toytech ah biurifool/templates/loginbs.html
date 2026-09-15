@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="/static/style_geral.css">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Ícones -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <!-- Fonte -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="body-login">
+    <div class="container d-flex align-items-center justify-content-center login-container">
+        <div class="login-card text-center">
+
+            <img src="/static/images/Tela_toytechh.png" alt="logo" class="logo-semfundo">
+
+            <h4 class="mb-3 text-white">Sistema de Estoque</h4>
+            <p class="mb-4 text-white">Faça seu login abaixo:</p>
+
+            <form method="post">
+
+                <!-- EMAIL -->
+                <div class="mb-3 text-start">
+                    <label class="form-label text-white">E-mail</label>
+                    <div class="input-group">
+                        <span class="input-group-text bg-dark border-secondary">
+                            <i class="bi bi-envelope text-white"></i>
+                        </span>
+                        <input type="email" class="form-control-login" placeholder="Digite seu email" required>
+                    </div>
+                </div>
+
+                <!-- SENHA -->
+                <div class="mb-3 text-start">
+                    <label class="form-label text-white">Senha</label>
+                    <div class="input-group">
+                        <span class="input-group-text bg-dark border-secondary">
+                            <i class="bi bi-lock text-white"></i>
+                        </span>
+
+                        <input type="password" id="senha" class="form-control-login" placeholder="Digite sua senha" required>
+
+                        <span class="input-group-text bg-dark border-secondary" style="cursor: pointer;"
+                            onclick="toggleSenha()">
+                            <i id="iconeSenha" class="bi bi-eye text-white"></i>
+                        </span>
+                    </div>
+                </div>
+
+                <button class="btn btn-login w-100 text-white mt-2" type="submit">
+                    Entrar
+                </button>
+
+            </form>
+
+            <div class="mt-4 text-white" style="font-size: 11px;">
+                ©2026 TOYTECH - Sistema de Gerenciamento de Estoque
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function toggleSenha() {
+            const senha = document.getElementById("senha");
+            const icone = document.getElementById("iconeSenha");
+
+            if (senha.type === "password") {
+                senha.type = "text";
+                icone.classList.remove("bi-eye");
+                icone.classList.add("bi-eye-slash");
+            } else {
+                senha.type = "password";
+                icone.classList.remove("bi-eye-slash");
+                icone.classList.add("bi-eye");
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+{% extends 'sidebar.html' %}
+{% block conteudo %}
+
+<div class="body-mov">
+    <div class="container d-flex align-items-center justify-content-center cadastro-container">
+        <div class="mov_solicitacao text-center mt-4">
+            <h3 class="mb-3 text-white">SAÍDA DE PRODUTOS</h3>
+                <form class="row g-3">
+                    <div class="col-md-4 text-white">
+                        <label for="id_operacao" class="form-label">ID OPERAÇÃO</label>
+                         <input type="text" class="form-control" id="id_operacao_s">
+                    </div>
+                    <div class="col-md-4 text-white">
+                        <label for="data_operacao" class="form-label">DATA</label>
+                        <input type="date" class="form-control" id="data_solicitacao_saida">
+                    </div>
+                    <div class="col-md-4 text-white">
+                        <label for="observacao_operacao" class="form-label">OBSERVAÇÃO</label>
+                         <input type="text" class="form-control" id="observacao">
+                    </div>
+                    <div class="col-md-4 text-white">
+                        <label for="func_id" class="form-label">ID FUNCIONÁRIO</label>
+                        <input type="password" class="form-control" id="funcionario_id">
+                    </div>
+                    <div class="col-md-4 text-white">
+                        <label for="id_fornecedor" class="form-label">ID SOLICITADOR</label>
+                         <input type="text" class="form-control" id="solicitador_id">
+                    </div>
+                    <div id="tabela_produto">
+                        <table class="table table-striped">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th class="produto_id">ID Produto</th>
+                                    <th class="nome_produto">Nome</th>
+                                    <th class="produto_quantidade"> Quantidade</th>
+                                    <th class="preco_produto">Preço</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="produto_id">
+                                        <input type="text" class="form-control" id="produto_id">
+                                    </td>
+                                    <td class="nome_produto">
+                                        <input type="text" class="form-control" id="nome_produto">
+                                    </td>
+                                    <td class="quantidade_produto">
+                                        <input type="number" class="form-control" id="produto_quantidade">
+                                    </td>
+                                    <td class="preco_produto">
+                                        <input type="text" class="form-control" id="preco_produto">
+                                    </td>
+                                    
+                                </tr>
+                            </tbody>  
+                        </table>
+                        <button  id="btn-solicitacao"   type="submit" class=" btn btn-info btn">CONFIRMAR</button>
+                    </div>
+                </form>
+                
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

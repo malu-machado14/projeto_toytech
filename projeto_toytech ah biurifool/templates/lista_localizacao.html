@@ -1,0 +1,71 @@
+{% extends 'sidebar.html' %}
+{% block conteudo %}
+<div class="body-lista">
+
+    <div class="container-fluid p-4">
+
+        <!-- topo -->
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <div>
+                <h1 class="fw-bold">Localização</h1>
+                <p class="text-muted" id="lista">
+                    Lista de localizações cadastrados
+                </p>
+            </div>
+            <a href="{{ url_for('nova_localizacao') }}" class="btn">  <!--vai pra tela de cadastro de produto-->
+                + Nova Localização
+            </a>
+        </div>
+
+        <!-- pesquisa -->
+        <div class="card-dash-lista mb-4">
+            <div class="row g-3">
+                <div class="col-md-10">
+                    <input type="text" class="form-control" placeholder="Procurando localização...">
+                </div>
+                <div class="col-md-2">
+                    <button class="btn btn-primary w-100">
+                        Buscar
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- tabela -->
+        <div class="card-dash-lista">
+            <table class="table table-hover align-middle">
+                <thead class="table-light">
+                    <tr>
+                        <th>ID</th>
+                        <th>Rua</th>
+                        <th>Prateleira</th>
+                        <th>Andar</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for localizacao in localizacao %}
+                        <tr>
+                            <td>{{ localizacao.localizacao_id }}</td>
+                            <td>{{ localizacao.rua }}</td>
+                            <td>{{ localizacao.prateleira }}</td>
+                            <td>{{ localizacao.andar }}</td>
+
+                            <td>
+                                <button class="btn btn-sm btn-warning btn-editar-lista">
+                                    Editar
+                                </button>
+                                <button class="btn btn-sm btn-danger btn-excluir-lista">
+                                    Excluir
+                                </button>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

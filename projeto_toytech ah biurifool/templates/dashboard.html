@@ -1,0 +1,113 @@
+{% extends 'sidebar.html' %}
+
+{% block conteudo %}
+
+<div id="dashboard-main">
+    <section class="banner-d">
+        <div class="conteudo-d">
+            <h1>Bem Vindo(a)!</h1>
+            <p>Olá ToyTechiano! Bem vindo(a) ao nosso Sistema de <br>Gerenciamento de Estoque.</p>
+        </div>
+    </section>
+
+
+    <div class="dashboard-div-d">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card-dash-d">
+                        <span class="label-dash-d">ESTOQUE TOTAL</span>
+                        <div class="value-dash-d">2.458</div>
+                        
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card-dash-d">
+                        <span class="label-dash-d">PRODUTOS CADASTRADOS</span>
+                        <div class="value-dash-d">67</div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card-dash-d">
+                        <span class="label-dash-d">ESTOQUE BAIXO</span>
+                        <div class="value-dash-d">⚠️</div>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="card-dash-d">
+                        <span class="label-dash-d">MOVIMENTAÇÕES RECENTES</span>
+                        <div>
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Produto</th>
+                                        <th>Tipo</th>
+                                        <th>Quantidade</th>
+                                    </tr>
+                                </thead>
+                            
+                                <tbody>
+                                    <tr>
+                                        <td>Furby Boom</td>
+                                        <td>Entrada</td>
+                                        <td>15</td>
+                                    </tr>
+                            
+                                    <tr>
+                                        <td>Cubo Mágico</td>
+                                        <td>Saída</td>
+                                        <td>4</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card-dash-d card-teal-d d-flex flex-column align-items-center justify-content-center text-center"
+                        style="height: 260px;">
+                        <span class="label-dash-d">OCUPAÇÃO DE ESTOQUE</span>
+                        <div
+                            style="width: 120px; height: 120px; border: 6px solid rgba(255, 255, 255, 0.344); border-top: 6px solid #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <span class="fs-2 fw-bold">75%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card-dash-d">
+                        <span class="label-dash-d">ALERTAS</span>
+                        <ul class="list-unstyled mt-3">
+                            <li class="mb-2 small"><i class="fa-solid fa-circle text-success me-2"
+                                    style="font-size: 8px;"></i> Sensor 3 offline</li>
+                            <li class="mb-2 small"><i class="fa-solid fa-circle text-success me-2"
+                                    style="font-size: 8px;"></i> Entrata pendente</li>
+                            <li class="mb-2 small"><i class="fa-solid fa-circle text-success me-2"
+                                    style="font-size: 8px;"></i> Cadastro não finalizado</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="card-dash-d">
+                        <span class="label-dash-d">GRÁFICOS</span>
+                        <div class="bar-container">
+                            <div class="bar-item-d" style="height: 40%;"></div>
+                            <div class="bar-item-d" style="height: 70%;"></div>
+                            <div class="bar-item-d" style="height: 90%;"></div>
+                            <div class="bar-item-d" style="height: 50%;"></div>
+                            <div class="bar-item-d" style="height: 85%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+{% endblock %}
